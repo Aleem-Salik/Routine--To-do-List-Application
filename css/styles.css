@@ -1,0 +1,251 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #ff9800;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 2.4rem;
+}
+
+.date-navigation {
+  display: flex;
+  align-items: center;
+}
+
+.date {
+  font-size: 2.4rem;
+}
+
+.date-navigation-btn {
+  border: none;
+  background-color: transparent;
+  height: 2.4rem;
+  width: 2.4rem;
+  cursor: pointer;
+}
+
+.navigation-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.user-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.8rem;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 1.6rem;
+  transition: all 0.3s;
+}
+
+.hidden--add-task {
+  opacity: 0;
+  transform: translateX(100%);
+  height: 0;
+}
+
+.form-container label {
+  font-size: 1.8rem;
+}
+
+.user-input {
+  font-size: 1.8rem;
+  border: none;
+  border-radius: 9px;
+  padding: 1.2rem;
+}
+
+.confirmation {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8rem;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+}
+
+.confirmation span {
+  font-size: 2.4rem;
+}
+
+.confirmation-btn-container {
+  display: flex;
+  gap: 2.4rem;
+}
+
+.open-add-btn,
+.add-btn,
+.confirmation-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  width: 12.8rem;
+  font-size: 1.6rem;
+  gap: 0.6rem;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.open-add-btn:hover,
+.add-btn:hover,
+.confirmation-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.add-icon {
+  height: 2rem;
+  width: 2rem;
+}
+
+.task-box {
+  display: flex;
+  /* gap: 1.2rem; */
+  border-radius: 9px;
+  overflow: hidden;
+  background-color: #e9c874;
+}
+
+.tasks-container {
+  margin: 3.2rem;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 1.8rem;
+  row-gap: 2.4rem;
+  justify-items: center;
+}
+
+.task {
+  height: 18rem;
+  width: 17rem;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.img-container {
+  width: 100%;
+  height: 10.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.task-img {
+  height: 100%;
+  width: 100%;
+}
+
+.content {
+  font-size: 1.3rem;
+  padding: 0 1.2rem;
+  font-weight: 500;
+}
+
+.task-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0.6rem 1.2rem;
+}
+
+.btn--task {
+  background-color: transparent;
+  border: none;
+  color: #000;
+  height: 1.6rem;
+  width: 1.6rem;
+  cursor: pointer;
+}
+
+.sub-tasks-container {
+  margin-top: 1.8rem;
+  display: none;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0 1.2rem;
+  width: 17rem;
+}
+
+.sub-task-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+}
+
+.sub-task-input {
+  width: 12.8rem;
+  border: none;
+  border-bottom: 1px solid #000;
+  background-color: transparent;
+  margin-bottom: 0.4rem;
+  padding-left: 0.4rem;
+}
+
+.sub-task-input:focus {
+  outline: none;
+}
+
+.add-btn--task {
+  color: #000;
+}
+
+.sub-tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.sub-task {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.sub-task span {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.checkbox {
+  height: 1.6rem;
+  width: 1.6rem;
+  cursor: pointer;
+}
+
+.open .sub-tasks-container {
+  display: flex;
+}
+
+.open {
+  grid-column: span 2;
+}
+
+.hidden {
+  display: none;
+}
