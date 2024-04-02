@@ -12,17 +12,20 @@ html {
 
 body {
   background-color: #ff9800;
+  overflow-x: hidden;
 }
 
-.section-header {
+/* .section-header {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   margin: 2.4rem;
-}
+} */
 
 .date-navigation {
   display: flex;
   align-items: center;
+  margin: 2.4rem 0 0 2.4rem;
 }
 
 .date {
@@ -47,6 +50,7 @@ body {
   flex-direction: column;
   align-items: flex-end;
   gap: 1.8rem;
+  margin: 2.4rem;
 }
 
 .form-container {

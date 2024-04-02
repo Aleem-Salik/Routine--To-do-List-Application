@@ -42,8 +42,6 @@ const loadTasks = function (currentId) {
     taskList = JSON.parse(permanentTasks);
   }
 
-  console.log(tasksArr);
-
   tasksArr.forEach((task) => {
     generateTaskHTML(task.taskContent, task.taskImg, task.subTasks);
   });
@@ -149,37 +147,41 @@ inputForm.addEventListener("submit", function (e) {
   openAddBtn.classList.remove("hidden");
 
   // Storing User Input in Variables
-  const taskContent = this.querySelector("#input-task").value;
-  const taskImg = this.querySelector("#input-img").value;
+  const taskContent = this.querySelector("#input-task");
+  const taskImg = this.querySelector("#input-img");
 
   // Adding task to an array and displaying it
   tasksArr.push({
-    taskContent,
-    taskImg,
+    taskContent: taskContent.value,
+    taskImg: taskImg.value,
     subTasks: [],
   });
 
   taskList.push({
-    taskContent,
-    taskImg,
+    taskContent: taskContent.value,
+    taskImg: taskImg.value,
     subTasks: [],
   });
 
   localStorage.setItem(id, JSON.stringify(tasksArr));
   localStorage.setItem("tasks", JSON.stringify(taskList));
-  generateTaskHTML(taskContent, taskImg, []);
+  generateTaskHTML(taskContent.value, taskImg.value, []);
 
   task = document.querySelectorAll(".task");
 
   task[tasksArr.length - 1].addEventListener("click", function () {
     this.closest(".task-box").classList.toggle("open");
   });
+
+  // Resetting the input
+  taskContent.value = "";
+  taskImg.value = "";
 });
 
 subTasksForms.forEach((subTaskForm) => {
   subTaskForm.addEventListener("submit", function (e) {
     e.preventDefault();
-    const subTask = this.querySelector(".sub-task-input").value;
+    const subTask = this.querySelector(".sub-task-input");
     const parentTask =
       this.closest(".task-box").querySelector(".content").innerText;
 
@@ -194,22 +196,24 @@ subTasksForms.forEach((subTaskForm) => {
 
     // Adding the inputted subTask to it's parent task's object in the tasks Array
     taskObj.subTasks.push({
-      subTask,
+      subTask: subTask.value,
       completed: false,
     });
 
     taskListObj.subTasks.push({
-      subTask,
+      subTask: subTask.value,
       completed: false,
     });
     // Changing the Object in the local Storage
     localStorage.setItem(id, JSON.stringify(tasksArr));
     localStorage.setItem("tasks", JSON.stringify(taskList));
     // Creating Subtask's HTML and displaying it
-    const html = generateSubTaskHTML(subTask);
+    const html = generateSubTaskHTML(subTask.value);
     this.closest(".sub-tasks-container")
       .querySelector(".sub-tasks")
       .insertAdjacentHTML("afterbegin", html);
+
+    subTask.value = "";
   });
 });
 

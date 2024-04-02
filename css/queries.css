@@ -3,12 +3,24 @@
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
 @media (max-width: 47em) {
   .tasks-container {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
 @media (max-width: 36em) {
+  html {
+    font-size: 8px;
+  }
+
+  .tasks-container {
+    margin: 1.8rem;
+  }
+}
+
+@media (max-width: 28em) {
   .tasks-container {
     grid-template-columns: repeat(2, 1fr);
   }
