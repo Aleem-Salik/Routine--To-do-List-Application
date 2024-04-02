@@ -97,7 +97,7 @@ function generateTaskHTML(taskContent, taskImg, subTasks) {
            <div class="sub-tasks-container">
            <form class="sub-task-form">
              <input class="sub-task-input" type="text" required />
-             <button class="add-btn--task btn--task">
+             <button type="submit" class="add-btn--task btn--task">
                <svg
                  xmlns="http://www.w3.org/2000/svg"
                  width="16"
