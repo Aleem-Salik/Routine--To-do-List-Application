@@ -135,6 +135,19 @@ body {
   border-radius: 9px;
   overflow: hidden;
   background-color: #e9c874;
+  position: relative;
+}
+
+.task-completed::after {
+  content: "Completed";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(135, 169, 34, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
 }
 
 .tasks-container {

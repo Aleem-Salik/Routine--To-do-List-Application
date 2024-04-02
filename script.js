@@ -57,8 +57,11 @@ openAddBtn.addEventListener("click", function () {
 });
 
 function generateTaskHTML(taskContent, taskImg, subTasks) {
+  let checkCompleted = subTasks.every((subTask) => subTask.completed);
+  let completed = false;
+  if (checkCompleted && subTasks.length !== 0) completed = true;
   let html = `
-        <div class="task-box">
+        <div class="task-box ${completed ? "task-completed" : ""}">
             <div class="task">
               <div class="img-container">
                 <img
