@@ -45,12 +45,6 @@ const loadTasks = function (currentId) {
   tasksArr.forEach((task) => {
     generateTaskHTML(task.taskContent, task.taskImg, task.subTasks);
   });
-  task = document.querySelectorAll(".task");
-  task.forEach((t) => {
-    t.addEventListener("click", function () {
-      t.closest(".task-box").classList.toggle("open");
-    });
-  });
 
   subTasksForms = document.querySelectorAll(".sub-task-form");
 };
